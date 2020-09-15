@@ -21,3 +21,11 @@ Execute `docker network create infrastructure && cp .env.example .env && docker-
 - User service - responsible for CRUD operations on users
 - Tasks service - responsible for CRUD operations on users tasks records
 - The service interact via **TCP sockets**
+
+## Example CURL TASKS
+
+```
+curl --location --request GET 'http://localhost:8000/tasks' \
+--header 'accept: application/json' \
+--header 'Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZjYwYWFmOGNkMjRlYTAwMmU0YTllY2IiLCJpYXQiOjE2MDAxNzA3NDQsImV4cCI6MTYwMjc2Mjc0NH0.Z31E_GQ_5GG7vGfNZ7po4Odnt8i1hOqCZHTLgEYShzM'
+```
