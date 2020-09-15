@@ -1,4 +1,4 @@
-# API with microservice using nestjs
+# API with microservices
 
 ## Running the example (docker-compose)
 
@@ -11,12 +11,10 @@ Execute `docker network create infrastructure && cp .env.example .env && docker-
 ## Launch services for integration testing (using docker-compose)
 
 - Execute `cp .env.example .env && cp .env.test.example .env.test`
-- Execute `docker-compose -f ./docker-compose.test.yml up -d` from the root of the repository
+
 - Run `cd ./gateway && npm install && npm run test` from the root of this repo
 
-## Brief architecture overview
-
-This API showcase consists of the following parts:
+## Services
 
 - API gateway
 - Token service - responsible for creating, decoding, destroying JWT tokens for users

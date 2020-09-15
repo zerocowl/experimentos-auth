@@ -51,8 +51,8 @@ services:
       MONGO_USER: ${MONGO_USER}
       MONGO_PASSWORD: ${MONGO_PASSWORD}
     volumes:
-      - "./db/data/db-files:/data/db"
-      - "./db/init/:/docker-entrypoint-initdb.d/"
+      - "./db/user/data/db-files:/data/db"
+      - "./db/user/init/:/docker-entrypoint-initdb.d/"
     ports:
       - 27017:27017
     networks:
@@ -68,10 +68,11 @@ services:
       MONGO_USER: ${MONGO_USER}
       MONGO_PASSWORD: ${MONGO_PASSWORD}
     volumes:
-      - "./db/data/db-files:/data/db"
-      - "./db/inittasks/:/docker-entrypoint-initdb.d/"
+      - "./db/tasks/data/db-files:/data/db"
+      - "./db/tasks/init/:/docker-entrypoint-initdb.d/"
     ports:
       - 27018:27018
+    command: mongod --port 27018
     networks:
       - backend
 
